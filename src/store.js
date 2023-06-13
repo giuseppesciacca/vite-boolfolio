@@ -18,7 +18,7 @@ export const store = reactive({
             .then(response => {
                 //console.log(response.data);
                 //console.log(response.data.projects.data);
-                this.projects = response.data.projects.data;
+                this.projects = response.data.projects;
             }).catch(error => {
                 console.error(error.message);
             })
