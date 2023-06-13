@@ -64,16 +64,18 @@ export default {
             </div>
             <!-- ./row -->
 
-            <nav aria-label="Page navigation">
+            <nav aria-label="Page navigation" v-if="store.projects.next_page_url || store.projects.prev_page_url">
                 <ul class="pagination">
-                    <li class="page-item disabled">
+                    <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous" @click="prevPage(store.projects.prev_page_url)">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li class="page-item active" aria-current="page"><a class="page-link" href="#"
-                            @click="firstPage(store.projects.first_page_url)">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#" @click="numberPage(2)">2</a></li>
+                    <li class="page-item" :class="store.projects.current_page == 1 ? 'active' : ''" aria-current="page">
+                        <a class="page-link" href="#" @click="firstPage(store.projects.first_page_url)">1</a>
+                    </li>
+                    <li class="page-item" :class="store.projects.current_page == 2 ? 'active' : ''"><a class="page-link"
+                            href="#" @click="numberPage(2)">2</a></li>
                     <li class="page-item">
                         <a class="page-link" aria-label="Next" @click="nextPage(store.projects.next_page_url)">
                             <span aria-hidden="true">&raquo;</span>
