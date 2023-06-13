@@ -21,16 +21,25 @@ export default {
         getImgsFromPath(imgPath) {
             return store.urlBase + 'storage/' + imgPath;
         },
+        /**
+         * 
+         * @param {string} path 
+         */
         nextPage(path) {
-            console.log(path);
             store.fetchProjects(path);
         },
+        /**
+         * 
+         * @param {string} path 
+         */
         prevPage(path) {
-            //console.log(path);
             store.fetchProjects(path);
         },
+        /**
+         * 
+         * @param {string} path 
+         */
         firstPage(path) {
-            //console.log(path);
             store.fetchProjects(path);
         },
         /**
@@ -38,7 +47,6 @@ export default {
          * @param {int} n_page 
          */
         numberPage(n_page) {
-            //console.log(path);
             store.fetchProjects(store.urlBase + store.projects_path + '?page=' + n_page);
         }
     },
