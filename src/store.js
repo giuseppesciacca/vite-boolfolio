@@ -4,7 +4,8 @@ import axios from 'axios'
 
 
 export const store = reactive({
-    urlProjectsApi: 'http://127.0.0.1:8000/api/projects',
+    urlBase: 'http://127.0.0.1:8000/',
+    projects_path: 'api/projects/',
     projects: [],
 
     /**
