@@ -12,14 +12,19 @@ export default {
             <nav class="navbar navbar-expand navbar-light bg-dark">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" href="#" aria-current="page">Home
-                            <span class="visually-hidden">(current)</span></a>
+                        <router-link class="nav-link active text-white" aria-current="page" :to="{ name: 'home' }">
+                            Home
+                        </router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">About</a>
+                        <router-link class="nav-link text-white" aria-current="page" :to="{ name: 'about' }">
+                            About
+                        </router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contacts</a>
+                        <router-link class="nav-link text-white" aria-current="page" :to="{ name: 'contacts' }">
+                            Contacts
+                        </router-link>
                     </li>
                 </ul>
             </nav>
