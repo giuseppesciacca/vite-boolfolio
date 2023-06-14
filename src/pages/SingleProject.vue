@@ -8,6 +8,7 @@ export default {
         return {
             first_half_url: store.urlBase + store.projects_path,
             project: [],
+            store
         }
     },
     mounted() {
@@ -30,8 +31,9 @@ export default {
     <div class="container p-5">
         <div class="row row-cols-1 row-cols-lg-2">
 
-            <div class="col">
-                <img class="img-fluid" :src="this.store.getImgsFromPath(this.project.img_path)" alt="{{this.project.slug}}">
+            <div class="col" v-if="this.project.img_path">
+                <img class="img-fluid" :src="this.store.getImgsFromPath(this.project.img_path)" alt="{{this.project.slug}}"
+                    loading="lazy">
             </div>
 
             <div class="col">
