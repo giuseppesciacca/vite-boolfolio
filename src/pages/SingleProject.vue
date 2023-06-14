@@ -17,8 +17,7 @@ export default {
                 response => {
                     if (response.data.success) {
                         this.project = response.data.result;
-                        console.log(response.data.result);
-                        console.log(this.project.type.name);
+                        //console.log(response.data.result);
                     } else {
                         //404
                     }
@@ -32,8 +31,7 @@ export default {
         <div class="row row-cols-1 row-cols-lg-2">
 
             <div class="col">
-                <img class="img-fluid" :src="`http://127.0.0.1:8000/storage/${this.project.img_path}`"
-                    alt="{{this.project.slug}}">
+                <img class="img-fluid" :src="this.store.getImgsFromPath(this.project.img_path)" alt="{{this.project.slug}}">
             </div>
 
             <div class="col">
