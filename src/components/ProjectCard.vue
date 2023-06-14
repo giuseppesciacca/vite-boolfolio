@@ -13,23 +13,29 @@ export default {
 </script>
 
 <template>
-    <div class="card h-100">
-        <img class="card-img-top" :src="img_path" :alt="slug" loading="lazy">
-        <div class="card-body">
-            <h4 class="card-title">{{ title }}</h4>
-            <div v-if="description">
-                <p class="card-text">{{ description }}</p>
+    <router-link :to="{ name: 'single-project', params: { slug } }" class="text-decoration-none">
+
+
+        <div class="card h-100">
+            <img class="card-img-top" :src="img_path" :alt="slug" loading="lazy">
+            <div class="card-body">
+                <h4 class="card-title">{{ title }}</h4>
+                <div v-if="description">
+                    <p class="card-text">{{ description }}</p>
+                </div>
+                <div v-if="tecnologies" v-for="tecnology in tecnologies">
+                    <span class="badge bg-primary">{{ tecnology.name }}</span>
+                </div>
             </div>
-            <div v-if="tecnologies" v-for="tecnology in tecnologies">
-                <span class="badge bg-primary">{{ tecnology.name }}</span>
+            <div class="card-footer text-muted">
+                <div>
+                    <span class="badge bg-secondary">{{ typeName }}</span>
+                </div>
             </div>
         </div>
-        <div class="card-footer text-muted">
-            <div>
-                <span class="badge bg-secondary">{{ typeName }}</span>
-            </div>
-        </div>
-    </div>
+
+
+    </router-link>
 </template>
 
 <style lang="scss" scoped>
