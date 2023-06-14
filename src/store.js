@@ -23,4 +23,12 @@ export const store = reactive({
                 console.error(error.message);
             })
     },
+    /**
+    * 
+    * @param {string} imgPath 
+    * @returns string
+    */
+    getImgsFromPath(imgPath) {
+        return store.urlBase + 'storage/' + imgPath;
+    },
 })

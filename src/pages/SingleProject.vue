@@ -1,12 +1,54 @@
 <script>
+import axios from 'axios';
+import { store } from '../store';
+
 export default {
-    name: 'SingleProject'
+    name: 'SingleProject',
+    data() {
+        return {
+            first_half_url: store.urlBase + store.projects_path,
+            project: [],
+        }
+    },
+    mounted() {
+        axios
+            .get(`${this.first_half_url + this.$route.params.slug}`)
+            .then(
+                response => {
+                    if (response.data.success) {
+                        this.project = response.data.result;
+                        console.log(response.data.result);
+                        console.log(this.project.type.name);
+                    } else {
+                        //404
+                    }
+                })
+    },
 }
 </script>
 
 <template>
-    <div>
+    <div class="container p-5">
+        <div class="row row-cols-1 row-cols-lg-2">
 
+            <div class="col">
+                <img class="img-fluid" :src="`http://127.0.0.1:8000/storage/${this.project.img_path}`"
+                    alt="{{this.project.slug}}">
+            </div>
+
+            <div class="col">
+                <h1>{{ this.project.title }}</h1>
+                <p>{{ this.project.description }}</p>
+                <div class="meta" v-if="this.project.type">
+                    <span class="badge bg-primary">{{ this.project.type.name }}</span>
+                </div>
+
+                <div class="meta" v-if="this.project.tecnologies">
+                    <span class="badge bg-primary" v-for="tecnology in this.project.tecnologies">{{ tecnology.name }}</span>
+                </div>
+            </div>
+
+        </div>
     </div>
 </template>
 

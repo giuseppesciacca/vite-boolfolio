@@ -15,14 +15,6 @@ export default {
     methods: {
         /**
          * 
-         * @param {string} imgPath 
-         * @returns string
-         */
-        getImgsFromPath(imgPath) {
-            return store.urlBase + 'storage/' + imgPath;
-        },
-        /**
-         * 
          * @param {string} path 
          */
         nextOrPrevPage(path) {
@@ -50,7 +42,7 @@ export default {
         <div class="container py-5">
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 gap-3 justify-content-center">
                 <div v-for="project in        store.projects.data       " class="col">
-                    <ProjectCard :img_path="this.getImgsFromPath(project.img_path)" :slug="project.slug"
+                    <ProjectCard :img_path="this.store.getImgsFromPath(project.img_path)" :slug="project.slug"
                         :title="project.title" :description="project.description" :tecnologies="project.tecnologies"
                         :typeName="project.type.name" />
                 </div>
