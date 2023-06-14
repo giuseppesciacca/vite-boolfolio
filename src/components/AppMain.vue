@@ -25,21 +25,7 @@ export default {
          * 
          * @param {string} path 
          */
-        nextPage(path) {
-            store.fetchProjects(path);
-        },
-        /**
-         * 
-         * @param {string} path 
-         */
-        prevPage(path) {
-            store.fetchProjects(path);
-        },
-        /**
-         * 
-         * @param {string} path 
-         */
-        firstPage(path) {
+        nextOrPrevPage(path) {
             store.fetchProjects(path);
         },
         /**
@@ -62,7 +48,7 @@ export default {
 <template>
     <main id="app_main">
         <div class="container">
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 gap-3 justify-content-center">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 gap-3 justify-content-center">
                 <div v-for="project in        store.projects.data       " class="col">
                     <ProjectCard :img_path="this.getImgsFromPath(project.img_path)" :slug="project.slug"
                         :title="project.title" :description="project.description" :tecnologies="project.tecnologies"
@@ -75,19 +61,22 @@ export default {
             <nav aria-label="Page navigation" v-if="store.projects.next_page_url || store.projects.prev_page_url">
                 <ul class="pagination">
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous" @click="prevPage(store.projects.prev_page_url)">
+                        <button class="page-link" href="#" aria-label="Previous"
+                            :class="store.projects.prev_page_url == null ? 'disabled' : ''"
+                            @click="nextOrPrevPage(store.projects.prev_page_url)">
                             <span aria-hidden="true">&laquo;</span>
-                        </a>
+                        </button>
                     </li>
                     <li class="page-item" :class="store.projects.current_page == 1 ? 'active' : ''" aria-current="page">
-                        <a class="page-link" href="#" @click="firstPage(store.projects.first_page_url)">1</a>
+                        <button class="page-link" href="#" @click="numberPage(1)">1</button>
                     </li>
-                    <li class="page-item" :class="store.projects.current_page == 2 ? 'active' : ''"><a class="page-link"
-                            href="#" @click="numberPage(2)">2</a></li>
+                    <li class="page-item" :class="store.projects.current_page == 2 ? 'active' : ''"><button
+                            class="page-link" href="#" @click="numberPage(2)">2</button></li>
                     <li class="page-item">
-                        <a class="page-link" aria-label="Next" @click="nextPage(store.projects.next_page_url)">
+                        <button class="page-link" aria-label="Next" @click="nextOrPrevPage(store.projects.next_page_url)"
+                            :class="store.projects.next_page_url == null ? 'disabled' : ''">
                             <span aria-hidden="true">&raquo;</span>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </nav>

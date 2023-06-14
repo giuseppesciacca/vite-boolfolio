@@ -32,4 +32,10 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+}
+</style>
