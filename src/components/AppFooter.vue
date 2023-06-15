@@ -33,7 +33,15 @@ export default {
                     </p>
                 </div>
                 <div class="col-6">
-                    TWITTER/LINKEDIN/GITHUB
+                    <a href="#" class="me-2">
+                        <font-awesome-icon :icon="['fab', 'twitter']" size="2xl" />
+                    </a>
+                    <a href="#" class="me-2">
+                        <font-awesome-icon :icon="['fab', 'linkedin']" size="2xl" />
+                    </a>
+                    <a href="#">
+                        <font-awesome-icon :icon="['fab', 'github']" size="2xl" />
+                    </a>
                 </div>
             </div>
 
