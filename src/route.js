@@ -6,6 +6,7 @@ import AppHome from './pages/AppHome.vue';
 import AppAbout from './pages/AppAbout.vue';
 import AppContact from './pages/AppContact.vue';
 import SingleProject from './pages/SingleProject.vue';
+import NotFound from './pages/NotFound.vue';
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -14,6 +15,9 @@ const routes = [
     { path: '/about', name: 'about', component: AppAbout },
     { path: '/contacts', name: 'contacts', component: AppContact },
     { path: '/:slug', name: 'single-project', component: SingleProject },
+    /* 404 zone */
+    // will match everything and put it under `$route.params.pathMatch`
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
 ]
 
 // 3. Create the router instance and pass the `routes` option
