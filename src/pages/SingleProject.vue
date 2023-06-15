@@ -47,6 +47,17 @@ export default {
                 <div class="meta" v-if="this.project.tecnologies">
                     <span class="badge bg-primary" v-for="tecnology in this.project.tecnologies">{{ tecnology.name }}</span>
                 </div>
+
+                <div v-if="this.project.github_repo">
+                    Link to github repository
+                    <a :href="this.project.github_repo" target="blank">
+                        <font-awesome-icon :icon="['fab', 'github']" size="lg" /></a>
+                </div>
+
+                <div v-if="this.project.project_link">
+                    <a :href="this.project.project_link" target="blank">
+                        Watch the project here</a>
+                </div>
             </div>
 
         </div>
