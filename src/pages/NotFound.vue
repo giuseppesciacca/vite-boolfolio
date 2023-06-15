@@ -5,14 +5,17 @@ export default {
 </script>
 
 <template>
-    <div>
-        <div class="container">
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="div">
             <h1>Not Found</h1>
-            <p>Oops! Try going</p>
-            <router-link :to="{ name: 'home' }">Home</router-link>
+            <p>Oops, we couldn't find that page. Try going <router-link :to="{ name: 'home' }">Home</router-link></p>
         </div>
     </div>
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+    min-height: calc(100vh - 208px - 160px);
+}
+</style>

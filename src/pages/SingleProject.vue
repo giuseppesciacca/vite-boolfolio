@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import { store } from '../store';
+import { router } from '../route';
 
 export default {
     name: 'SingleProject',
@@ -20,7 +21,7 @@ export default {
                         this.project = response.data.result;
                         //console.log(response.data.result);
                     } else {
-                        //404
+                        router.push({ name: 'not-found' })
                     }
                 })
     },
