@@ -8,7 +8,16 @@ export default {
         description: String,
         tecnologies: Array,
         typeName: String
-    }
+    },
+    methods: {
+        truncateText(text) {
+            if (text.length > 100) {
+                const trucateText = text.slice('1', '97');
+                return `${trucateText}...`
+            }
+            return text
+        }
+    },
 }
 </script>
 
@@ -21,7 +30,7 @@ export default {
             <div class="card-body">
                 <h4 class="card-title">{{ title }}</h4>
                 <div v-if="description">
-                    <p class="card-text">{{ description }}</p>
+                    <p class="card-text">{{ truncateText(description) }}</p>
                 </div>
                 <div v-if="tecnologies" v-for="tecnology in tecnologies">
                     <span class="badge bg-primary">{{ tecnology.name }}</span>
