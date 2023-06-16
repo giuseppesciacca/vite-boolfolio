@@ -44,7 +44,7 @@ export default {
                                 <li class="nav-item">
                                     <router-link class="nav-link" :class="this.$route.name == 'contacts' ? 'active' : ''"
                                         aria-current="page" :to="{ name: 'contacts' }">
-                                        Contacts
+                                        Contact
                                     </router-link>
                                 </li>
                             </ul>
