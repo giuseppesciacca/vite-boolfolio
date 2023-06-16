@@ -85,4 +85,8 @@ export default {
     <!-- /#app_main -->
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#app_main {
+    font-family: 'Roboto Slab', serif;
+}
+</style>
