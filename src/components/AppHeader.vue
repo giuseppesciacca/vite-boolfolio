@@ -8,40 +8,56 @@ export default {
     <header id="app_header" class="bg-light ">
         <div class="container">
             <div class="row">
-                <div class="col-6 d-flex align-items-center gap-3 ">
+                <div class="col-10 col-md-6 d-flex align-items-center gap-3 ">
                     <div class="icon">
                         <img class="img-fluid" src="../../public/ico.webp" alt="me">
                     </div>
-                    Giuseppe Sciacca
+                    <h1 class="m-0 fw-semibold fs-5">Giuseppe Sciacca</h1>
                 </div>
-                <!-- .col-6 -->
+                <!-- /.col-6 left -->
 
-                <div class="col-6">
-                    <nav class="navbar navbar-expand navbar-light end justify-content-end h-100">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item">
-                                <router-link class="nav-link active" aria-current="page" :to="{ name: 'home' }">
-                                    Home
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" aria-current="page" :to="{ name: 'about' }">
-                                    About
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" aria-current="page" :to="{ name: 'contacts' }">
-                                    Contacts
-                                </router-link>
-                            </li>
-                        </ul>
+                <div class="col-2 col-md-6 d-flex justify-content-end">
+
+                    <nav class="navbar navbar-expand-md navbar-light justify-content-end h-100">
+
+                        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!-- /hamburgher btn -->
+
+                        <div class="collapse navbar-collapse" id="collapsibleNavId">
+                            <ul class="navbar-nav me-auto mt-2 mt-lg-0 fw-semibold fs-5">
+                                <li class="nav-item f">
+                                    <router-link class="nav-link" :class="this.$route.name == 'home' ? 'active' : ''"
+                                        aria-current="page" :to="{ name: 'home' }">
+                                        Home
+                                    </router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link class="nav-link" :class="this.$route.name == 'about' ? 'active' : ''"
+                                        aria-current="page" :to="{ name: 'about' }">
+                                        About
+                                    </router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link class="nav-link" :class="this.$route.name == 'contacts' ? 'active' : ''"
+                                        aria-current="page" :to="{ name: 'contacts' }">
+                                        Contacts
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                     <!-- /nav -->
+
                 </div>
-                <!-- /.col-6 -->
+                <!-- /.col-6 right-->
             </div>
             <!-- /.row -->
         </div>
+        <!-- /.container -->
     </header>
 </template>
 
@@ -61,9 +77,5 @@ header {
     width: 50px;
     height: 50px;
     overflow: hidden;
-}
-
-h1 {
-    height: 100%;
 }
 </style>
