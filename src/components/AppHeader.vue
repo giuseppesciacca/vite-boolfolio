@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <header id="app_header" class="bg-light ">
+    <header id="app_header">
         <div class="container">
             <div class="row">
                 <div class="col-10 col-md-6 d-flex align-items-center gap-3 ">

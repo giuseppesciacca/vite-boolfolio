@@ -40,8 +40,10 @@ export default {
 <template>
     <main id="app_main">
         <div class="container py-5">
-            <h3 class="text-center py-3">Suilad, mellon! Dai un'occhiata ai miei ultimi progetti!</h3>
+            <h3 class="text-center py-3">Suilad, mellon! <br> I'm Giuseppe, a Full-Stack Web Developer </h3>
 
+
+            <h5 class="text-center">Dai un'occhiata ai miei progetti!</h5>
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center">
                 <div v-for="project in store.projects.data" class="col">
                     <ProjectCard :img_path="this.store.getImgsFromPath(project.img_path)" :slug="project.slug"
