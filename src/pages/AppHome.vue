@@ -42,8 +42,8 @@ export default {
         <div class="container py-5">
             <h3 class="text-center py-3">Suilad, mellon! Dai un'occhiata ai miei ultimi progetti!</h3>
 
-            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 gap-3 justify-content-center">
-                <div v-for="project in        store.projects.data       " class="col">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center">
+                <div v-for="project in store.projects.data" class="col">
                     <ProjectCard :img_path="this.store.getImgsFromPath(project.img_path)" :slug="project.slug"
                         :title="project.title" :description="project.description" :tecnologies="project.tecnologies"
                         :typeName="project.type.name" />
@@ -67,6 +67,10 @@ export default {
                     </li>
                     <li class="page-item" :class="store.projects.current_page == 2 ? 'active' : ''"><button
                             class="page-link" href="#" @click="numberPage(2)">2</button></li>
+                    <li class="page-item" :class="store.projects.current_page == store.projects.last_page ? 'active' : ''">
+                        <button class="page-link" href="#" @click="numberPage(store.projects.last_page)"> {{
+                            store.projects.last_page }} </button>
+                    </li>
                     <li class="page-item">
                         <button class="page-link" aria-label="Next" @click="nextOrPrevPage(store.projects.next_page_url)"
                             :class="store.projects.next_page_url == null ? 'disabled' : ''">
