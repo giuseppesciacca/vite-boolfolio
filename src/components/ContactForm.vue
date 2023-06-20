@@ -51,21 +51,33 @@ export default {
     <form @submit.prevent="sendForm()">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="Insert your name here"
-                aria-describedby="helpId" v-model="name" required>
+            <input type="text" name="name" id="name" class="form-control" :class="{ 'is-invalid': errors.message }"
+                placeholder="Insert your name here" aria-describedby="helpId" v-model="name" required>
+            <p v-for="(error, index) in errors.name" :key="`message-error-${index}`" class="invalid-feedback">
+                {{ error }}
+            </p>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="Insert your email here"
-                aria-describedby="helpId" v-model="email" required>
+            <input type="email" name="email" id="email" class="form-control" :class="{ 'is-invalid': errors.message }"
+                placeholder="Insert your email here" cols="30" rows="10" aria-describedby="helpId" v-model="email" required>
+            <p v-for="(error, index) in errors.email" :key="`message-error-${index}`" class="invalid-feedback">
+                {{ error }}
+            </p>
         </div>
         <div class="mb-3">
             <label for="message" class="form-label">Insert message</label>
-            <textarea class="form-control" name="message" id="message" rows="3" v-model="message" required></textarea>
+            <textarea class="form-control" :class="{ 'is-invalid': errors.message }" name="message" id="message" rows="3"
+                v-model="message" required></textarea>
+            <p v-for="(error, index) in errors.message" :key="`message-error-${index}`" class="invalid-feedback">
+                {{ error }}
+            </p>
         </div>
 
         <button type="reset" class="btn btn-warning me-3">Reset fields</button>
-        <button type="submit" class="btn btn-primary">Send email</button>
+        <button type="submit" class="btn btn-primary" :disabled="loading">{{ loading ?
+            'Sending email...' : 'Send email'
+        }}</button>
     </form>
 </template>
 
