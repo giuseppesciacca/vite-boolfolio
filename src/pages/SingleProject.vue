@@ -12,6 +12,26 @@ export default {
             store
         }
     },
+    methods: {
+        convertTecnology(tecnology) {
+            if (tecnology === 'HTML5') {
+                return 'html5';
+            } else if (tecnology === 'CSS3') {
+                return 'css3-alt';
+            } else if (tecnology === 'JavaScript') {
+                return 'square-js'
+            } else if (tecnology === 'Vue.js') {
+                return 'vuejs'
+            } else if (tecnology === 'Bootstrap') {
+                return 'bootstrap'
+            } else if (tecnology === 'php') {
+                return 'php'
+            } else if (tecnology === 'Laravel') {
+                return 'laravel'
+            }
+            return 'other';
+        }
+    },
     mounted() {
         axios
             .get(`${this.first_half_url + this.$route.params.slug}`)
@@ -44,8 +64,17 @@ export default {
                     <span class="badge bg-primary">{{ this.project.type.name }}</span>
                 </div>
 
-                <div class="meta" v-if="this.project.tecnologies">
-                    <span class="badge bg-primary" v-for="tecnology in this.project.tecnologies">{{ tecnology.name }}</span>
+                <div v-if="this.project.tecnologies" class="meta">
+                    <h6 class="pt-3">Tecnologie utilizzate:</h6>
+                    <span v-for="tecnology in  this.project.tecnologies" :class="convertTecnology(tecnology.name)"
+                        class="badge me-2">
+                        <span v-if="convertTecnology(tecnology.name) == 'other'"> {{ tecnology.name }}
+                        </span>
+
+                        <span v-else>
+                            <font-awesome-icon :icon="['fab', convertTecnology(tecnology.name)]" size="2xl" />
+                        </span>
+                    </span>
                 </div>
 
                 <div v-if="this.project.github_repo">
@@ -64,4 +93,36 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.html5 {
+    color: #e44d26;
+}
+
+.css3-alt {
+    color: #2449d8;
+}
+
+.square-js {
+    color: #f7df1e;
+}
+
+.bootstrap {
+    color: #7108f5;
+}
+
+.vuejs {
+    color: #3fb984;
+}
+
+.php {
+    color: #787cb4;
+}
+
+.laravel {
+    color: #e3382b;
+}
+
+.other {
+    background-color: #212529;
+}
+</style>
