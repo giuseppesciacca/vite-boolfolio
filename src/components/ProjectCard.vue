@@ -31,7 +31,7 @@ export default {
             } else if (tecnology === 'CSS3') {
                 return 'css3-alt';
             } else if (tecnology === 'JavaScript') {
-                return 'square-js'
+                return 'js'
             } else if (tecnology === 'Vue.js') {
                 return 'vuejs'
             } else if (tecnology === 'Bootstrap') {
@@ -101,7 +101,7 @@ img {
     color: #2449d8;
 }
 
-.square-js {
+.js {
     color: #f7df1e;
 }
 
