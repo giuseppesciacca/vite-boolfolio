@@ -17,10 +17,8 @@ export default {
                                 Home
                             </router-link>
                         </li>
-                        <li>
-                            <router-link class="nav-link text-white d-inline" aria-current="page" :to="{ name: 'about' }">
-                                About
-                            </router-link>
+                        <li v-if="this.$route.name == 'home'" class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
                         </li>
                         <li>
                             <router-link class="nav-link text-white d-inline" aria-current="page"
