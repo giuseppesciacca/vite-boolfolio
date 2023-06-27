@@ -6,7 +6,7 @@ export default {
 
 <template>
     <h2 id="about" class="text-center">About me</h2>
-    <p>
+    <p class="text-center">
         Sono un laureato magistrale in Scienze e Tecnologie Agrarie. Fin dalla tenera età sono sempre stato appassionato
         del
         mondo informatico, cosa che, dopo l’università, mi ha spinto a frequentare un corso di programmazione di
