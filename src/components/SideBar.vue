@@ -21,7 +21,7 @@ export default {
     </div>
 
     <div id="go_up" class="d-flex align-items-center justify-content-center">
-        <font-awesome-icon :icon="['fas', 'arrow-up']" />
+        <a href="#"><font-awesome-icon :icon="['fas', 'arrow-up']" /></a>
     </div>
 </template>
 
@@ -47,8 +47,7 @@ export default {
     z-index: 100;
 
     a {
-        color: white;
-        padding: 1rem;
+        color: black;
     }
 }
 </style>

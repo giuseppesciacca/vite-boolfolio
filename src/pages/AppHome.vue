@@ -41,11 +41,14 @@ export default {
 
 <template>
     <main id="app_main">
+        <div class="jumbotron d-flex justify-content-center align-items-center flex-column text-white">
+            <h1 class="text-center py-3">Suilad, mellon! I'm Giuseppe</h1>
+            <p>a Full-Stack Web Developer</p>
+        </div>
+
         <SideBar />
 
         <div class="container py-5">
-            <h3 class="text-center py-3">Suilad, mellon! <br> I'm Giuseppe, a Full-Stack Web Developer </h3>
-
 
             <h5 class="text-center">Dai un'occhiata ai miei progetti!</h5>
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 justify-content-center">
@@ -94,5 +97,13 @@ export default {
 <style lang="scss" scoped>
 #app_main {
     font-family: 'Roboto Slab', serif;
+}
+
+.jumbotron {
+    background-image: url('../../public/jumbo.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75vh;
 }
 </style>
