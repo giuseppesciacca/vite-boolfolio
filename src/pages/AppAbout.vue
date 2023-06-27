@@ -6,53 +6,20 @@ export default {
 
 <template>
     <div class="container py-5">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur?
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora atque accusantium delectus
-        hic
-        dignissimos facere quos quia, officia aspernatur sit nemo facilis? Porro perferendis ullam fugit magni libero
-        pariatur?
+        <p>
+            Sono un laureato magistrale in Scienze e Tecnologie Agrarie. Fin dalla tenera età sono sempre stato appassionato
+            del
+            mondo informatico, cosa che, dopo l’università, mi ha spinto a frequentare un corso di programmazione di
+            Full-Stack
+            Web developer che mi ha permesso di approfondire ed imparare nuovi linguaggi. Amo sviluppare costantemente nuove
+            competenze e affrontare le sfide che il mondo dell'IT mi propone quotidianamente, essendo consapevole
+            dell'importanza di tenersi costantemente aggiornato e adattarsi alle evoluzioni rapide della tecnologia.
+        </p>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+    height: 80vh;
+}
+</style>

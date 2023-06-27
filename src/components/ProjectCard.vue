@@ -12,8 +12,8 @@ export default {
     methods: {
         truncateText(text) {
             if (text.length > 100) {
-                const trucateText = text.slice('1', '97');
-                return `${trucateText}...`
+                const trucateText = text.slice('0', '95');
+                return `${trucateText}[...]`
             }
             return text
         }
@@ -32,11 +32,11 @@ export default {
                 <div v-if="description">
                     <p class="card-text">{{ truncateText(description) }}</p>
                 </div>
-                <div v-if="tecnologies" v-for="tecnology in tecnologies">
-                    <span class="badge bg-primary">{{ tecnology.name }}</span>
+                <div v-if="tecnologies">
+                    <span v-for="tecnology in tecnologies" class="badge bg-primary me-2">{{ tecnology.name }}</span>
                 </div>
             </div>
-            <div class="card-footer text-muted">
+            <div class="card-footer text-muted text-center">
                 <div>
                     <span class="badge bg-secondary">{{ typeName }}</span>
                 </div>
@@ -48,6 +48,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.card {
+    box-shadow: 0px 1px 5px #888888;
+}
+
 img {
     aspect-ratio: 16 / 10;
     object-fit: cover;
