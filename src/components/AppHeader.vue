@@ -29,18 +29,17 @@ export default {
 
                         <div class="collapse navbar-collapse" id="collapsibleNavId">
                             <ul class="navbar-nav me-auto mt-2 mt-lg-0 fw-semibold fs-5">
-                                <li class="nav-item f">
+                                <li class="nav-item">
                                     <router-link class="nav-link" :class="this.$route.name == 'home' ? 'active' : ''"
                                         aria-current="page" :to="{ name: 'home' }">
                                         Home
                                     </router-link>
                                 </li>
-                                <li class="nav-item">
-                                    <router-link class="nav-link" :class="this.$route.name == 'about' ? 'active' : ''"
-                                        aria-current="page" :to="{ name: 'about' }">
-                                        About
-                                    </router-link>
+
+                                <li v-if="this.$route.name == 'home'" class="nav-item">
+                                    <a href="#about" class="nav-link">About</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <router-link class="nav-link" :class="this.$route.name == 'contacts' ? 'active' : ''"
                                         aria-current="page" :to="{ name: 'contacts' }">

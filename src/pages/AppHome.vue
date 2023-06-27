@@ -2,6 +2,7 @@
 import { store } from '../store';
 import ProjectCard from '../components/ProjectCard.vue';
 import SideBar from '../components/SideBar.vue';
+import AppAbout from '../components/AppAbout.vue';
 
 export default {
     name: 'AppHome',
@@ -12,7 +13,8 @@ export default {
     },
     components: {
         ProjectCard,
-        SideBar
+        SideBar,
+        AppAbout
     },
     methods: {
         /**
@@ -50,7 +52,9 @@ export default {
 
         <div class="container py-5">
 
-            <h5 class="text-center pb-5">Dai un'occhiata ai miei progetti!</h5>
+            <AppAbout />
+
+            <h2 class="text-center py-5">Dai un'occhiata ai miei progetti!</h2>
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
                 <div v-for="project in store.projects.data" class="col">
                     <ProjectCard :img_path="this.store.getImgsFromPath(project.img_path)" :slug="project.slug"

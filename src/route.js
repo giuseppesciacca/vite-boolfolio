@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from "vue-router";
 // 1. Define route components.
 // These can be imported from other files
 import AppHome from './pages/AppHome.vue';
-import AppAbout from './pages/AppAbout.vue';
 import AppContact from './pages/AppContact.vue';
 import SingleProject from './pages/SingleProject.vue';
 import NotFound from './pages/NotFound.vue';
@@ -12,7 +11,6 @@ import NotFound from './pages/NotFound.vue';
 // Each route should map to a component.
 const routes = [
     { path: '/', name: 'home', component: AppHome },
-    { path: '/about', name: 'about', component: AppAbout },
     { path: '/contacts', name: 'contacts', component: AppContact },
     { path: '/:slug', name: 'single-project', component: SingleProject },
     /* 404 zone */
