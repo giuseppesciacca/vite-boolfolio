@@ -1,6 +1,7 @@
 <script>
 import { store } from '../store';
 import ProjectCard from '../components/ProjectCard.vue';
+import SideBar from '../components/SideBar.vue';
 
 export default {
     name: 'AppHome',
@@ -10,7 +11,8 @@ export default {
         }
     },
     components: {
-        ProjectCard
+        ProjectCard,
+        SideBar
     },
     methods: {
         /**
@@ -39,6 +41,8 @@ export default {
 
 <template>
     <main id="app_main">
+        <SideBar />
+
         <div class="container py-5">
             <h3 class="text-center py-3">Suilad, mellon! <br> I'm Giuseppe, a Full-Stack Web Developer </h3>
 
