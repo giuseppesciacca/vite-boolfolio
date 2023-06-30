@@ -43,18 +43,37 @@ export default {
 
 <template>
     <main id="app_main">
-        <div class="jumbotron d-flex justify-content-center align-items-center flex-column text-white">
+        <section class="jumbotron d-flex justify-content-center align-items-center flex-column text-white">
             <h1 class="text-center py-3">Suilad, mellon! I'm Giuseppe</h1>
             <p>a Full-Stack Web Developer</p>
-        </div>
+        </section>
+
+        <!--         
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../../public/ico.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../public/jumbo.webp" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div> -->
 
         <SideBar />
 
-        <div class="container py-5">
+        <AppAbout />
 
-            <AppAbout />
-
-            <h2 class="text-center py-5">Dai un'occhiata ai miei progetti!</h2>
+        <section id="cards" class="container py-5">
+            <h2 class="text-center py-5 text-white">Dai un'occhiata ai miei progetti!</h2>
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
                 <div v-for="project in store.projects.data" class="col">
                     <ProjectCard :img_path="this.store.getImgsFromPath(project.img_path)" :slug="project.slug"
@@ -93,7 +112,7 @@ export default {
                 </ul>
             </nav>
             <!-- ./page navigation -->
-        </div>
+        </section>
     </main>
     <!-- /#app_main -->
 </template>
@@ -101,6 +120,8 @@ export default {
 <style lang="scss" scoped>
 #app_main {
     font-family: 'Roboto Slab', serif;
+    background: #595959;
+    /* background: #6d6d6d; */
 }
 
 .jumbotron {
@@ -109,5 +130,14 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     height: 75vh;
+}
+
+.carousel {
+    width: 200px;
+
+    img {
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+    }
 }
 </style>
