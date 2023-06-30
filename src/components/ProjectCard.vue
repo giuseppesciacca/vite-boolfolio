@@ -52,8 +52,10 @@ export default {
 
         <div class="card h-100">
             <img class="card-img-top" :src="img_path" :alt="slug" loading="lazy">
+
             <div class="card-body">
                 <h4 class="card-title">{{ title }}</h4>
+
                 <div v-if="description">
                     <p class="card-text">{{ truncateText(description) }}</p>
                 </div>
@@ -70,14 +72,16 @@ export default {
                     </span>
                 </div>
             </div>
+            <!-- /card-body -->
 
             <div class="card-footer text-muted text-center">
                 <div>
                     <span class="badge bg-secondary">{{ typeName }}</span>
                 </div>
             </div>
+            <!-- /card-footer -->
         </div>
-
+        <!-- /card -->
 
     </router-link>
 </template>
