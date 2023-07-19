@@ -88,7 +88,13 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-    box-shadow: 0px 1px 5px #888888;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    opacity: 0.70;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 5px 5px #888888;
+    opacity: 1;
 }
 
 img {
