@@ -45,28 +45,8 @@ export default {
     <main id="app_main">
         <section class="jumbotron d-flex justify-content-center align-items-center flex-column text-white">
             <h1 class="text-center py-3">Suilad, mellon! I'm Giuseppe</h1>
-            <p>a Full-Stack Web Developer</p>
+            <p class="my_job">a Full-Stack Web Developer</p>
         </section>
-
-        <!--         
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../../public/ico.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="../../public/jumbo.webp" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div> -->
 
         <SideBar />
 
@@ -132,12 +112,37 @@ export default {
     height: 75vh;
 }
 
-.carousel {
-    width: 200px;
+h1 {
+    animation-name: left_to_right;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
 
-    img {
-        aspect-ratio: 4 / 3;
-        object-fit: contain;
+@keyframes left_to_right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.my_job {
+    animation-name: right_to_left;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes right_to_left {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
     }
 }
 </style>

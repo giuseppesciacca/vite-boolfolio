@@ -26,6 +26,10 @@ export default {
                                 Contact me
                             </router-link>
                         </li>
+                        <li>
+                            <a class="nav-link text-white d-inline" aria-current="page"
+                                href="http://127.0.0.1:8000/admin">Admin</a>
+                        </li>
                     </ul>
                     <!-- links -->
 

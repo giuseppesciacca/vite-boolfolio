@@ -52,12 +52,12 @@ export default {
     <div class="container p-5">
         <div class="row row-cols-1 row-cols-lg-2">
 
-            <div class="col" v-if="this.project.img_path">
+            <div class="col image" v-if="this.project.img_path">
                 <img class="img-fluid" :src="this.store.getImgsFromPath(this.project.img_path)" alt="{{this.project.slug}}"
                     loading="lazy">
             </div>
 
-            <div class="col">
+            <div class="col px-3">
                 <h1>{{ this.project.title }}</h1>
                 <p>{{ this.project.description }}</p>
                 <div class="meta" v-if="this.project.type">
@@ -94,6 +94,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.image {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 5px 5px #888888;
+    border-radius: 0.5rem;
+}
+
 .html5 {
     color: #e44d26;
 }
